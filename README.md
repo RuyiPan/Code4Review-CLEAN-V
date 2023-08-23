@@ -6,7 +6,7 @@ This file includes both **CLEAN-V** and the three simplied versions:
 2. **CLEAN-V without cluster enhancement**
 3. **Massive univariate**
 
-The way to call them has been documented in the file.
+The way to call them has been documented in the file (line 21-24).
 To use the functions, please make sure source the file [Clean_support.cpp](https://github.com/RuyiPan/Code4Review-CLEAN-V/blob/main/Clean_support.cpp).
 
 ## [Codes4Simulations.R](https://github.com/RuyiPan/Code4Review-CLEAN-V/blob/main/Code4Simulations.R)
