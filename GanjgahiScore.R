@@ -17,7 +17,7 @@ Whitened <- function(Y, X, vector) {
 #Score function return the score statistic
 #res - residual after OLS
 #Z   - design matrix for the auxiliary model [ones(nS,1) diag(value)]
-#    - cbind(rep(1,nS),eigenvalue(K))
+#      cbind(rep(1,nS),eigenvalue(K))
 #b   - (Z^TZ)^{-1} (save the time to compute it)
 Score <- function(res, Z, b) {
   nS <- nrow(res)
@@ -44,7 +44,7 @@ Score <- function(res, Z, b) {
 # Scoretest return the original and permuted score test staistics
 # Y  - N*V matrix contains V features for N images
 # X  - design matrix
-# k  - the kinship matrix
+# K  - the kinship matrix
 # nP - number of permutations 
 Scoretest <- function(Y, X, K, nP) {
   
@@ -73,10 +73,11 @@ Scoretest <- function(Y, X, K, nP) {
   TS <- Score(res,Z,b) #orginal test statistics
   maxT <- rep(0, nP)
   IdS <- rep(0,length(TS))
+  
   ### store the permuted test statistics
   permStat <- matrix(0, nrow=nP, ncol=length(TS))
   for (p in c(1:nP)) {
-    # Null model residual permutation
+    ## We used the Null model residual permutation (the second permutation method P2)
     syP <- res[sample(nS),]+cov
     resP <- hat%*%syP
     TSp <- Score(resP, Z, b)
