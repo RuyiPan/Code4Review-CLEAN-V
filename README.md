@@ -13,7 +13,8 @@ To use the functions, please make sure source the file [Clean_support.cpp](https
 This file contains the way to simulate data for power analysis and FWER evaluation.
 
 ## [GanjgahiScore.R](https://github.com/RuyiPan/Code4Review-CLEAN-V/blob/main/GanScore.R)
-This file contains the Ganjgahi et al Scoretest method.  We used the Score test that Ganjgahi showed in the their paper [Ganjgahi et al, 2015](https://doi.org/10.1016/j.neuroimage.2015.03.005). The p-value calculation is based on their second permutation method (Null model residual permutation (P2)).
+This file contains the Ganjgahi et al Scoretest method.  We used the Score test that Ganjgahi showed in the their paper [\[Ganjgahi et al, 2015\]](https://doi.org/10.1016/j.neuroimage.2015.03.005). The p-value calculation is based on their second permutation method (Null model residual permutation (P2)).
+This R implementaion is based on their MATLAB implementation.
 
 
 An example of running the scoretest 
