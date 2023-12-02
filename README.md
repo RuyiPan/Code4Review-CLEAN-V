@@ -19,12 +19,12 @@ This R implementaion is based on their MATLAB implementation.
 
 An example of running the scoretest 
 ```R
-N=100
-V=1000
-Y=matrix(rnorm(N*V,0,1),N,V)
-X=cbind(rep(1,nrow(Y)))
-K=kronecker(diag(N/2),matrix(c(1,1,1,1),nrow=2,ncol=2))
-nP=2000
+N=100  #The number of images
+V=1000 #The number of features in each image
+Y=matrix(rnorm(N*V,0,1),N,V) # Includes all V features for N images
+X=cbind(rep(1,nrow(Y))) # Design matrix
+K=kronecker(diag(N/2),matrix(c(1,1,1,1),nrow=2,ncol=2)) # The kinship matrix
+nP=2000 # Number of permutation
 
 res <- Scoretest(Y,X,K,nP)
 
